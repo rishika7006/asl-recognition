@@ -1,22 +1,22 @@
 {
-  "feature_dim": 132,
+  "feature_dim": 256,
   "version": "v2",
-  "layout": "3 temporal chunks \u00d7 (4 spatial cells \u00d7 (9 HOOF bins + 1 cell mean_mag) + 4 global stats)",
+  "layout": "5 temporal chunks \u00d7 (4 spatial cells \u00d7 (9 HOOF bins + 1 cell mean_mag) + 4 global stats + 84 hand landmarks)",
   "spatial_grid_rows_cols": [
     2,
     2
   ],
-  "temporal_chunks": 3,
+  "temporal_chunks": 5,
   "angle_bins": 9,
   "mag_threshold_for_hoof": 0.2,
   "cell_normalization": "signed sqrt (alpha=0.5) + L2 per cell HOOF",
-  "flow_method": "Farneback dense optical flow (cv2.calcOpticalFlowFarneback)",
+  "flow_method": "Farneback dense optical flow with MediaPipe background masking",
   "flow_resize_wh": [
     160,
     120
   ],
   "aggregation": "mean within each temporal chunk, then concatenate chunks",
-  "num_classes": 100,
-  "num_videos": 1013,
+  "num_classes": 30,
+  "num_videos": 390,
   "baseline_artifacts_dir": "../artifacts/  (v1 \u2014 20-dim, mean across whole video) for ablation"
 }
