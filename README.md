@@ -18,7 +18,7 @@ on the same camera stream.
 ### 2. Install
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/TanviDeore/ASL_Recognition_Grp14.git
 cd ASL_Recognition_Grp14-new-implementation
 
 python3.11 -m venv .venv
