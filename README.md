@@ -6,10 +6,6 @@ plus a lightweight classifier. Runs side-by-side parallel inference on both
 flow backends so the live demo can compare classical vs deep flow estimation
 on the same camera stream.
 
-For the full project plan, design decisions, bug-fix log, and final
-metrics, see [`implementation-plan.md`](implementation-plan.md). For
-report-ready results, see [`eval_results/README.md`](eval_results/README.md).
-
 ## How to run
 
 ### 1. Prerequisites
@@ -135,5 +131,4 @@ filtering missing videos:
 ```
 
 Reference videos for each sign live under `data/raw/videos/` once the
-dataset is downloaded; canonical examples are listed in §10 of
-`implementation-plan.md`.
+dataset is downloaded.
