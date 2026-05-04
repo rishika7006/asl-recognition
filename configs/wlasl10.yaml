@@ -1,0 +1,27 @@
+dataset:
+  json_path: data/nslt_100.json
+  videos_dir: data/raw/videos
+  missing_txt: data/missing.txt
+  # Optional: per-class folder of user-recorded clips that get mixed
+  # into the TRAIN split (one folder per class gloss, e.g.
+  # data/user_videos/book/<clip>.mov). Leave path nonexistent to skip.
+  user_videos_dir: data/user_videos
+  top_k: 10
+  num_classes: 10
+  num_frames: 16
+  crop_size: 96
+  grid_size: 12
+  flow_backend: farneback   # or "raft"
+
+training:
+  batch_size: 32
+  epochs: 100
+  lr: 0.001
+  weight_decay: 0.01
+  early_stop_patience: 10
+  dropout: 0.5
+  hidden: [256, 128]
+
+paths:
+  results_dir: results
+  features_dir: data/features

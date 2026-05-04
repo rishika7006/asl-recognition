@@ -1,0 +1,28 @@
+dataset:
+  json_path: data/nslt_100.json
+  frames_dir: data/frames
+  missing_txt: data/missing.txt
+  top_k: 20
+  num_frames: 16
+  image_size: 224
+
+model:
+  rgb_backbone: resnet18
+  flow_hidden_dim: 128
+  landmark_hidden_dim: 128
+  fusion_hidden_dim: 256
+  num_classes: 10
+  dropout: 0.5
+
+training:
+  batch_size: 16
+  epochs: 20
+  lr: 0.001
+  weight_decay: 0.01
+  early_stop_patience: 5
+
+paths:
+  rgb_only_ckpt: results/rgb_only.pt
+  flow_only_ckpt: results/flow_only.pt
+  landmark_only_ckpt: results/landmark_only.pt
+  fusion_ckpt: results/fusion.pt

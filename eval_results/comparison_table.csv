@@ -1,0 +1,5 @@
+Backend,Classifier,train top-1,val top-1,test top-1,test top-3,test F1 (macro),ms/clip (test)
+Farneback,SVM,0.857,0.095,0.231,0.385,0.134,1.13
+Farneback,MLP,0.990,0.190,0.538,0.846,0.517,0.05
+Raft,SVM,0.800,0.190,0.308,0.308,0.186,1.02
+Raft,MLP,0.848,0.190,0.308,0.462,0.307,0.06
