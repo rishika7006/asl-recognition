@@ -3,7 +3,7 @@
 CS 6384 Computer Vision (UT Dallas, Spring 2026). Real-time American Sign
 Language recognition from a webcam, using optical flow (Farnebäck and RAFT)
 plus a lightweight classifier. Runs side-by-side parallel inference on both
-flow backends so the live demo can compare classical vs deep flow estimation
+flow estimators so the live demo can compare classical vs deep flow estimation
 on the same camera stream.
 
 ## How to run
@@ -18,8 +18,8 @@ on the same camera stream.
 ### 2. Install
 
 ```bash
-git clone https://github.com/TanviDeore/ASL_Recognition_Grp14.git
-cd ASL_Recognition_Grp14-new-implementation
+git clone -b am-corrections-raft-eval-flowviz https://github.com/TanviDeore/ASL_Recognition_Grp14.git
+cd ASL_Recognition_Grp14-am-corrections-raft-eval-flowviz
 
 python3.11 -m venv .venv
 source .venv/bin/activate
@@ -39,7 +39,7 @@ unzip -q ~/Downloads/archive.zip -d data/raw/
 find data/raw -name "*.mp4" | wc -l
 ```
 
-### 4. Extract features (both backends)
+### 4. Extract features (both estimators)
 
 ```bash
 python -m src.extract_features --backend farneback           # ~1 min
@@ -79,7 +79,7 @@ ASL_CAMERA_INDEX=1 python app.py
 ```
 
 The demo runs Farnebäck and RAFT in parallel and shows side-by-side
-predictions. Both panes turn green when the backends agree.
+predictions. Both panes turn green when the estimators agree.
 
 ### 7. (Optional) Regenerate evaluation artifacts
 
@@ -95,7 +95,7 @@ Outputs go into `eval_results/`.
 
 ```
 src/
-  extract_features.py      hand-crop + window-aware flow extractor (both backends)
+  extract_features.py      hand-crop + window-aware flow extractor (both estimators)
   flow_backends.py         dispatcher
   farneback_backend.py     classical optical flow
   raft_backend.py          torchvision raft_small
@@ -103,7 +103,7 @@ src/
   dataset.py               PyTorch Dataset with frame-level augmentation
   train.py                 RBF SVM + MLP training + evaluation
   eval/                    report-ready evaluation scripts
-tests/                     synthetic-data smoke tests for both backends
+tests/                     synthetic-data smoke tests for both estimators
 configs/wlasl10.yaml       pipeline config (top_k, crop size, grid size)
 data/
   nslt_100.json            WLASL split metadata
