@@ -2,8 +2,12 @@ opencv-python
 numpy
 matplotlib
 scikit-learn
-torch 
+torch
 torchvision
 mediapipe
 tqdm
 gdown
+joblib
+kaggle
+pyyaml
+flask
