@@ -1,5 +1,7 @@
 # ASL Real-Time Sign Recognition — Group 14
 
+> **Portfolio note (Rishika's fork):** my work on this project covered the optical flow feature extraction pipeline and dataset preparation. The canonical upstream maintained by the team lives at [TanviDeore/ASL_Recognition_Grp14](https://github.com/TanviDeore/ASL_Recognition_Grp14) — this fork tracks it.
+
 Real-time American Sign Language recognition from a webcam, using optical flow 
 (Farnebäck and RAFT) and a lightweight classifier. Runs side-by-side parallel inference 
 on both flow estimators so the live demo can compare classical vs deep flow estimation
